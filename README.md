@@ -11,7 +11,7 @@ corresponding SBML4humans model report at [https://sbml4humans.de/model_url?url=
 ## How to cite
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7575803.svg)](https://doi.org/10.5281/zenodo.7575803)
 
-> Deepa Maheshvare M. & König, Matthias. (2023). 
+> Deepa Maheshvare & König, Matthias. (2023). 
 > *Model of glucose-stimulated insulin secretion in the pancreatic β-cell.*   
 > Zenodo. [https://doi.org/10.5281/zenodo.7575803](https://doi.org/10.5281/zenodo.7575803)
 
