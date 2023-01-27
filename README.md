@@ -6,6 +6,8 @@ This repository provides the model of glucose-stimulated insulin secretion in th
 The model is distributed as [SBML](http://sbml.org) available from [`pancreas_deepa.xml`](./models/pancreas_deepa.xml) with 
 corresponding SBML4humans model report at [https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/pancreas-model/main/models/pancreas_deepa.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/pancreas-model/main/models/pancreas_deepa.xml)
 
+![model overview](./models/pancreas_deepa.png)
+
 ## How to cite
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7025683.svg)](https://doi.org/10.5281/zenodo.7025683)
 
