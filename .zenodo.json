@@ -2,7 +2,7 @@
   "upload_type": "software",
   "title": "Model of glucose-stimulated insulin secretion in the pancreatic β-cell",
   "creators": [
-   {
+    {
       "orcid": "0000-0002-8879-8357",
       "affiliation": "Department of Computational and Data Sciences, Indian Institute of Science, Bangalore, India",
       "name": "Deepa Maheshvare M."
@@ -13,7 +13,7 @@
       "name": "König, Matthias"
     }
   ],
-  "description": "<p>This repository provides the model of glucose-stimulated insulin secretion in the pancreatic β-cell.</p>\n<p>If you have any questions or problems please <a href=\"https://github.com/matthiaskoenig/pancreas-model/issues\">open an issue</a></p>\n<h2>Funding</h2><p>Matthias König was supported by the Federal Ministry of Education and Research (BMBF, Germany) within the research network Systems Medicine of the Liver (<strong>LiSyM</strong>, grant number 031L0054) and by the German Research Foundation (DFG) within the Research Unit Programme FOR 5151 <strong><a href=\"https://qualiperf.de\">QuaLiPerF</a></strong> (Quantifying Liver Perfusion-Function Relationship in Complex Resection - A Systems Medicine Approach)\" by grant number 436883643 and grant number 465194077 (Priority Programme SPP 2311, Subproject SimLivA)</p>",
+  "description": "<p>This repository provides the model of glucose-stimulated insulin secretion in the pancreatic β-cell.</p>\n<p>If you have any questions or problems please <a href=\"https://github.com/matthiaskoenig/pancreas-model/issues\">open an issue</a></p>\n<h2>Funding</h2><p>Research of DM was supported by the Senior Research Fellowship from the Ministry of Human Resource Development (MHRD), Government of India. MK was supported by the Federal Ministry of Education and Research (BMBF, Germany) within the research network Systems Medicine of the Liver (LiSyM, grant number 031L0054) and by the German Research Foundation (DFG) within the Research Unit Program FOR 5151 \"QuaLiPerF (Quantifying Liver Perfusion-Function Relationship in Complex Resection - A Systems Medicine Approach)\" by grant number 436883643 and grant number 465194077 (Priority Programme SPP 2311, Subproject SimLivA).</p>",
   "access_right": "open",
   "license": "LGPL-3.0",
   "keywords": [
