@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" level="3" version="1" fbc:required="false" comp:required="true">
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" level="3" version="2" comp:required="true" fbc:required="false">
   <notes>
     <body xmlns="http://www.w3.org/1999/xhtml">
       <p>Created with <a href="https://github.com/matthiaskoenig/sbmlutils">https://github.com/matthiaskoenig/sbmlutils</a>.
@@ -42,24 +42,20 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <dcterms:creator>
             <rdf:Bag>
               <rdf:li rdf:parseType="Resource">
-                <vCard:N rdf:parseType="Resource">
-                  <vCard:Family>Deepa</vCard:Family>
-                  <vCard:Given>Maheshvare</vCard:Given>
-                </vCard:N>
-                <vCard:EMAIL>deepamahm.iisc@gmail.com </vCard:EMAIL>
-                <vCard:ORG rdf:parseType="Resource">
-                  <vCard:Orgname>Indian Institute of Science, Bangalore</vCard:Orgname>
-                </vCard:ORG>
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Deepa</vCard4:family-name>
+                  <vCard4:given-name>Maheshvare</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>deepamahm.iisc@gmail.com </vCard4:hasEmail>
+                <vCard4:organization-name>Indian Institute of Science, Bangalore</vCard4:organization-name>
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
-                <vCard:N rdf:parseType="Resource">
-                  <vCard:Family>König</vCard:Family>
-                  <vCard:Given>Matthias</vCard:Given>
-                </vCard:N>
-                <vCard:EMAIL>koenigmx@hu-berlin.de</vCard:EMAIL>
-                <vCard:ORG rdf:parseType="Resource">
-                  <vCard:Orgname>Humboldt-University Berlin, Institute for Theoretical Biology</vCard:Orgname>
-                </vCard:ORG>
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>König</vCard4:family-name>
+                  <vCard4:given-name>Matthias</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>koenigmx@hu-berlin.de</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Theoretical Biology</vCard4:organization-name>
               </rdf:li>
             </rdf:Bag>
           </dcterms:creator>
@@ -133,6 +129,12 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
         </listOfUnits>
       </unitDefinition>
+      <unitDefinition id="mmole_per_min" name="mmole/min">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
       <unitDefinition id="mmole_per_min_l" name="mmole/min/l">
         <listOfUnits>
           <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
@@ -143,6 +145,11 @@ FOR A PARTICULAR PURPOSE.</p></body>
       <unitDefinition id="nl" name="nanoliter">
         <listOfUnits>
           <unit kind="litre" exponent="1" scale="0" multiplier="1e-09"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_l" name="1/liter">
+        <listOfUnits>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
         </listOfUnits>
       </unitDefinition>
       <unitDefinition id="per_mM" name="liter/mmole">
@@ -317,7 +324,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_glc_ext" sboTerm="SBO:0000247" id="glc_ext" name="glucose (blood)" compartment="ext" initialConcentration="2.8" substanceUnits="pmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true" fbc:charge="0" fbc:chemicalFormula="C6H12O6">
+      <species metaid="meta_glc_ext" sboTerm="SBO:0000247" id="glc_ext" name="glucose (blood)" compartment="ext" initialConcentration="2.8" substanceUnits="pmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:charge="0" fbc:chemicalFormula="C6H12O6">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_glc_ext">
@@ -374,7 +381,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_adp" sboTerm="SBO:0000247" id="adp" name="ADP" compartment="cyto" initialConcentration="1" substanceUnits="pmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-3" fbc:chemicalFormula="C10H12N5O10P2">
+      <species metaid="meta_adp" sboTerm="SBO:0000247" id="adp" name="ADP" compartment="cyto" initialConcentration="1.199" substanceUnits="pmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-3" fbc:chemicalFormula="C10H12N5O10P2">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_adp">
@@ -403,7 +410,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_atp" sboTerm="SBO:0000247" id="atp" name="ATP" compartment="cyto" initialConcentration="1" substanceUnits="pmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-4" fbc:chemicalFormula="C10H12N5O13P3">
+      <species metaid="meta_atp" sboTerm="SBO:0000247" id="atp" name="ATP" compartment="cyto" initialConcentration="3.921" substanceUnits="pmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-4" fbc:chemicalFormula="C10H12N5O13P3">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_atp">
@@ -1034,6 +1041,87 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter metaid="meta_IRSss_Vm" sboTerm="SBO:0000186" id="IRSss_Vm" name="Vmax IRS steady state" value="0.02" units="mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_IRSss_Vm">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_IRSss_Katp_ratio" sboTerm="SBO:0000027" id="IRSss_Katp_ratio" name="Km IRS steady state for atp_ratio" value="5.13347666690148" units="dimless" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_IRSss_Katp_ratio">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_IRSss_hillatp_ratio" sboTerm="SBO:0000190" id="IRSss_hillatp_ratio" name="Hill coefficient IRS steady state" value="7.10527645078065" units="dimless" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_IRSss_hillatp_ratio">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000190"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_IRSfp_Vm" sboTerm="SBO:0000009" id="IRSfp_Vm" name="Vmax IRS first phase" value="0.05" units="mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_IRSfp_Vm">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000009"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_IRSfp_Kdatp_dt" sboTerm="SBO:0000027" id="IRSfp_Kdatp_dt" name="Km IRS first phase for datp/dt" value="0.0003" units="pmole_per_min" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_IRSfp_Kdatp_dt">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_NUCLEOTIDE_CHANGE_Vm" sboTerm="SBO:0000186" id="NUCLEOTIDE_CHANGE_Vm" name="Vmax nucleotide change" value="0.2" units="per_min" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_NUCLEOTIDE_CHANGE_Vm">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter id="presim_duration" name="presimulation duration" value="60" units="min" constant="true"/>
+      <parameter id="presim_glc_ext" name="presimulation glucose concentration" value="3" units="mM" constant="true"/>
+      <parameter id="sim_glc_ext" name="simulation glucose concentration" value="3" units="mM" constant="true"/>
       <parameter metaid="meta_ATPformation_KMadp" sboTerm="SBO:0000027" id="ATPformation_KMadp" name="Km ATPformation for adp" value="5.6" units="mM" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -1060,7 +1148,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ATPformation_Vm" sboTerm="SBO:0000186" id="ATPformation_Vm" name="Vmax ATPformation" value="286.887" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_ATPformation_Vm" sboTerm="SBO:0000186" id="ATPformation_Vm" name="Vmax ATPformation" value="42.6819" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ATPformation_Vm">
@@ -1086,7 +1174,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ATPconsumption_Vm" sboTerm="SBO:0000186" id="ATPconsumption_Vm" name="Vmax ATPconsumption" value="55.6185" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_ATPconsumption_Vm" sboTerm="SBO:0000186" id="ATPconsumption_Vm" name="Vmax ATPconsumption" value="5.58245" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ATPconsumption_Vm">
@@ -1112,7 +1200,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_GLCt1r_Vm" sboTerm="SBO:0000186" id="GLCt1r_Vm" name="Vmax GLCt1r" value="5000" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_GLCt1r_Vm" sboTerm="SBO:0000186" id="GLCt1r_Vm" name="Vmax GLCt1r" value="1000" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_GLCt1r_Vm">
@@ -1177,7 +1265,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_HEX1_Vm" sboTerm="SBO:0000186" id="HEX1_Vm" name="Vmax HEX1" value="9.77009" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_HEX1_Vm" sboTerm="SBO:0000186" id="HEX1_Vm" name="Vmax HEX1" value="2.71005" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_HEX1_Vm">
@@ -1242,7 +1330,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PGI_Vm" sboTerm="SBO:0000186" id="PGI_Vm" name="Vmax PGI" value="16.6786" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PGI_Vm" sboTerm="SBO:0000186" id="PGI_Vm" name="Vmax PGI" value="4525.64" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PGI_Vm">
@@ -1307,7 +1395,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PFK_Vm" sboTerm="SBO:0000186" id="PFK_Vm" name="Vmax PFK" value="9978.43" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PFK_Vm" sboTerm="SBO:0000186" id="PFK_Vm" name="Vmax PFK" value="7.48024" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PFK_Vm">
@@ -1333,7 +1421,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_FBP_Vm" sboTerm="SBO:0000186" id="FBP_Vm" name="Vmax FBP" value="0.000308261" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_FBP_Vm" sboTerm="SBO:0000186" id="FBP_Vm" name="Vmax FBP" value="0.01" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_FBP_Vm">
@@ -1359,7 +1447,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_FBA_Vm" sboTerm="SBO:0000186" id="FBA_Vm" name="Vmax FBA" value="9784.3" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_FBA_Vm" sboTerm="SBO:0000186" id="FBA_Vm" name="Vmax FBA" value="500.562" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_FBA_Vm">
@@ -1424,7 +1512,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_TPI_Vm" sboTerm="SBO:0000186" id="TPI_Vm" name="Vmax TPI" value="9944.78" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_TPI_Vm" sboTerm="SBO:0000186" id="TPI_Vm" name="Vmax TPI" value="4572.25" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_TPI_Vm">
@@ -1502,7 +1590,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_GAPD_Vm" sboTerm="SBO:0000186" id="GAPD_Vm" name="Vmax GAPD" value="9999.59" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_GAPD_Vm" sboTerm="SBO:0000186" id="GAPD_Vm" name="Vmax GAPD" value="4950.28" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_GAPD_Vm">
@@ -1580,7 +1668,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PGK_Vm" sboTerm="SBO:0000186" id="PGK_Vm" name="Vmax PGK" value="9995.69" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PGK_Vm" sboTerm="SBO:0000186" id="PGK_Vm" name="Vmax PGK" value="4912.9" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PGK_Vm">
@@ -1645,7 +1733,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PGM_Vm" sboTerm="SBO:0000186" id="PGM_Vm" name="Vmax PGM" value="6031.17" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PGM_Vm" sboTerm="SBO:0000186" id="PGM_Vm" name="Vmax PGM" value="5000" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PGM_Vm">
@@ -1697,7 +1785,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ENO_Vm" sboTerm="SBO:0000186" id="ENO_Vm" name="Vmax ENO" value="1008.82" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_ENO_Vm" sboTerm="SBO:0000186" id="ENO_Vm" name="Vmax ENO" value="191.263" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ENO_Vm">
@@ -1762,7 +1850,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PYK_Vm" sboTerm="SBO:0000186" id="PYK_Vm" name="Vmax PYK" value="24.9763" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PYK_Vm" sboTerm="SBO:0000186" id="PYK_Vm" name="Vmax PYK" value="7.44078" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PYK_Vm">
@@ -1827,7 +1915,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PYRt2r_Vm" sboTerm="SBO:0000186" id="PYRt2r_Vm" name="Vmax PYRt2r" value="57.0479" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PYRt2r_Vm" sboTerm="SBO:0000186" id="PYRt2r_Vm" name="Vmax PYRt2r" value="0.0575902" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PYRt2r_Vm">
@@ -1866,7 +1954,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_LDH_L_Vm" sboTerm="SBO:0000186" id="LDH_L_Vm" name="Vmax LDH_L" value="1298.83" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_LDH_L_Vm" sboTerm="SBO:0000186" id="LDH_L_Vm" name="Vmax LDH_L" value="7.26844" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_LDH_L_Vm">
@@ -1931,7 +2019,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_L_LACt2r_Vm" sboTerm="SBO:0000186" id="L_LACt2r_Vm" name="Vmax L_LACt2r" value="0.00211756" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_L_LACt2r_Vm" sboTerm="SBO:0000186" id="L_LACt2r_Vm" name="Vmax L_LACt2r" value="5.21331" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_L_LACt2r_Vm">
@@ -1970,7 +2058,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_PFK26_Vm" sboTerm="SBO:0000186" id="PFK26_Vm" name="Vmax PFK26" value="119.5" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_PFK26_Vm" sboTerm="SBO:0000186" id="PFK26_Vm" name="Vmax PFK26" value="4.19328" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PFK26_Vm">
@@ -1996,7 +2084,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_FBP26_Vm" sboTerm="SBO:0000186" id="FBP26_Vm" name="Vmax FBP26" value="9.75" units="mmole_per_min_l" constant="true">
+      <parameter metaid="meta_FBP26_Vm" sboTerm="SBO:0000186" id="FBP26_Vm" name="Vmax FBP26" value="8.05946" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_FBP26_Vm">
@@ -2009,59 +2097,6 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_IRS_Vm" sboTerm="SBO:0000186" id="IRS_Vm" name="Vmax IRS" value="0.02" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_IRS_Vm">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_IRS_Katp_ratio" sboTerm="SBO:0000027" id="IRS_Katp_ratio" name="Km IRS for atp_ratio" value="5.13347666690148" units="dimless" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_IRS_Katp_ratio">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_IRS_hillatp_ratio" sboTerm="SBO:0000190" id="IRS_hillatp_ratio" name="Hill coefficient IRS" value="7.10527645078065" units="dimless" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_IRS_hillatp_ratio">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000190"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_ATP_CHANGE_Vm" sboTerm="SBO:0000186" id="ATP_CHANGE_Vm" name="Vmax ATP_CHANGE" value="5000" units="per_min" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_ATP_CHANGE_Vm">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter id="IRS_per_vol" name="Insulin secretion (IRS) per volume pancreas" value="NaN" units="mmole_per_min_l" constant="false"/>
       <parameter id="atp_adp" name="ATP total" value="NaN" units="mM" constant="false"/>
       <parameter id="atp_ratio" name="ATP ratio" value="NaN" units="dimless" constant="false"/>
       <parameter id="nadh_nad" name="NADH total" value="NaN" units="mM" constant="false"/>
@@ -2070,92 +2105,15 @@ FOR A PARTICULAR PURPOSE.</p></body>
       <parameter id="fbp_dhap_grap" name="FBP DHAP GRAP total" value="NaN" units="mM" constant="false"/>
       <parameter id="fbp_dhap" name="FBP DHAP total" value="NaN" units="mM" constant="false"/>
       <parameter id="lac_pyr_ratio" name="LAC PYR ratio" value="NaN" units="dimless" constant="false"/>
-      <parameter id="atp_adp_max" name="ATP ADP max" value="NaN" units="mM" constant="false"/>
+      <parameter id="IRS_ss" name="IRS steady state" value="NaN" units="mmole_per_min_l" constant="false"/>
+      <parameter id="datp_dt" name="dATP/dt" value="NaN" units="pmole_per_min" constant="false"/>
+      <parameter id="IRS_fp" name="IRS first phase" value="NaN" units="mmole_per_min_l" constant="false"/>
+      <parameter id="IRS_per_vol" name="Insulin secretion (IRS) per volume pancreas" value="NaN" units="mmole_per_min_l" constant="false"/>
+      <parameter id="atp_adp_ss" name="ATP+ADP steady state" value="NaN" units="mM" constant="false"/>
     </listOfParameters>
-    <listOfInitialAssignments>
-      <initialAssignment metaid="meta_atp_init" sboTerm="SBO:0000362" symbol="atp">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_atp_init">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000362"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
-          <apply>
-            <plus/>
-            <apply>
-              <times/>
-              <cn sbml:units="mM"> 2.45 </cn>
-              <apply>
-                <divide/>
-                <apply>
-                  <power/>
-                  <ci> glc_ext </ci>
-                  <cn sbml:units="dimensionless"> 2.02 </cn>
-                </apply>
-                <apply>
-                  <plus/>
-                  <apply>
-                    <power/>
-                    <ci> glc_ext </ci>
-                    <cn sbml:units="dimensionless"> 2.02 </cn>
-                  </apply>
-                  <apply>
-                    <power/>
-                    <cn sbml:units="mM"> 4.3 </cn>
-                    <cn sbml:units="dimensionless"> 2.02 </cn>
-                  </apply>
-                </apply>
-              </apply>
-            </apply>
-            <cn sbml:units="mM"> 3.16 </cn>
-          </apply>
-        </math>
-      </initialAssignment>
-      <initialAssignment metaid="meta_adp_init" sboTerm="SBO:0000362" symbol="adp">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_adp_init">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000362"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
-          <apply>
-            <plus/>
-            <apply>
-              <times/>
-              <apply>
-                <minus/>
-                <cn sbml:units="mM"> 1.04502456792567 </cn>
-              </apply>
-              <apply>
-                <divide/>
-                <ci> glc_ext </ci>
-                <apply>
-                  <plus/>
-                  <ci> glc_ext </ci>
-                  <cn sbml:units="mM"> 15.7423980664128 </cn>
-                </apply>
-              </apply>
-            </apply>
-            <cn sbml:units="mM"> 1.33504344297249 </cn>
-          </apply>
-        </math>
-      </initialAssignment>
-    </listOfInitialAssignments>
     <listOfRules>
       <assignmentRule variable="ext">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <times/>
             <cn sbml:units="dimless" type="integer"> 1000 </cn>
@@ -2164,7 +2122,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
         </math>
       </assignmentRule>
       <assignmentRule variable="cyto">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <times/>
             <cn sbml:units="dimless"> 0.95 </cn>
@@ -2173,7 +2131,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
         </math>
       </assignmentRule>
       <assignmentRule variable="mito">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <times/>
             <cn sbml:units="dimless"> 0.05 </cn>
@@ -2181,16 +2139,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="IRS_per_vol">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <divide/>
-            <ci> IRS </ci>
-            <ci> cell </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule metaid="meta_atp_tot" sboTerm="SBO:0000362" variable="atp_adp">
+      <assignmentRule metaid="meta_atp_tot" sboTerm="SBO:0000362" name="ATP total" variable="atp_adp">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_atp_tot">
@@ -2210,8 +2159,8 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="atp_ratio">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+      <assignmentRule name="ATP ratio" variable="atp_ratio">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <divide/>
             <ci> atp </ci>
@@ -2223,7 +2172,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule metaid="meta_nadh_tot" sboTerm="SBO:0000362" variable="nadh_nad">
+      <assignmentRule metaid="meta_nadh_tot" sboTerm="SBO:0000362" name="NADH total" variable="nadh_nad">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_nadh_tot">
@@ -2243,8 +2192,8 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="nadh_ratio">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+      <assignmentRule name="NADH ratio" variable="nadh_ratio">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <divide/>
             <ci> nadh </ci>
@@ -2256,7 +2205,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="fbp_grap">
+      <assignmentRule name="FBP GRAP total" variable="fbp_grap">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
@@ -2265,7 +2214,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="fbp_dhap_grap">
+      <assignmentRule name="FBP DHAP GRAP total" variable="fbp_dhap_grap">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
@@ -2275,7 +2224,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="fbp_dhap">
+      <assignmentRule name="FBP DHAP total" variable="fbp_dhap">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
@@ -2284,7 +2233,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="lac_pyr_ratio">
+      <assignmentRule name="LAC PYR ratio" variable="lac_pyr_ratio">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <divide/>
@@ -2293,8 +2242,8 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="phos">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+      <assignmentRule name="Phosphate glucose dependency" variable="phos">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <piecewise>
             <piece>
               <cn sbml:units="mM"> 10.1746465657385 </cn>
@@ -2442,8 +2391,8 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </piecewise>
         </math>
       </assignmentRule>
-      <assignmentRule variable="nad">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+      <assignmentRule name="NAD glucose dependency" variable="nad">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <plus/>
             <apply>
@@ -2475,8 +2424,8 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="nadh">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+      <assignmentRule name="NADH glucose dependency" variable="nadh">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <plus/>
             <apply>
@@ -2508,8 +2457,131 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule variable="atp_adp_max">
-        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+      <assignmentRule name="IRS steady state" variable="IRS_ss">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Steady state insulin secretion (IRS) depending on ATP/ADP ratio.
+Uses a Hill function.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> IRSss_Vm </ci>
+            <apply>
+              <divide/>
+              <apply>
+                <power/>
+                <apply>
+                  <divide/>
+                  <ci> atp </ci>
+                  <ci> adp </ci>
+                </apply>
+                <ci> IRSss_hillatp_ratio </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <power/>
+                  <apply>
+                    <divide/>
+                    <ci> atp </ci>
+                    <ci> adp </ci>
+                  </apply>
+                  <ci> IRSss_hillatp_ratio </ci>
+                </apply>
+                <apply>
+                  <power/>
+                  <ci> IRSss_Katp_ratio </ci>
+                  <ci> IRSss_hillatp_ratio </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="dATP/dt" variable="datp_dt">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>rateOf(ATP) rate of change</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> ATPformation </ci>
+                      <ci> ATPconsumption </ci>
+                    </apply>
+                    <ci> PGK </ci>
+                    <ci> PYK </ci>
+                  </apply>
+                  <ci> PFK26 </ci>
+                </apply>
+                <ci> HEX1 </ci>
+              </apply>
+              <ci> PFK </ci>
+            </apply>
+            <ci> ATP_ADP_CHANGE </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="IRS first phase" variable="IRS_fp">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>First phase insulin secretion (IRS) depending on the change in ATP: dATP/dt.
+The rise in ATP concentration triggers closure of APT-sensitive potassium (KATP) channels,
+which ultimately result in the release of insulin in the bloodstream.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <piecewise>
+            <piece>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> IRSfp_Vm </ci>
+                  <ci> datp_dt </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> datp_dt </ci>
+                  <ci> IRSfp_Kdatp_dt </ci>
+                </apply>
+              </apply>
+              <apply>
+                <gt/>
+                <ci> datp_dt </ci>
+                <cn sbml:units="pmole_per_min" type="integer"> 0 </cn>
+              </apply>
+            </piece>
+            <otherwise>
+              <cn sbml:units="mmole_per_min_l" type="integer"> 0 </cn>
+            </otherwise>
+          </piecewise>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Insulin secretion (IRS) per volume pancreas" variable="IRS_per_vol">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> IRS </ci>
+            <ci> cell </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="ATP+ADP steady state" variable="atp_adp_ss">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
           <apply>
             <plus/>
             <apply>
@@ -2543,7 +2615,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
       </assignmentRule>
     </listOfRules>
     <listOfReactions>
-      <reaction metaid="meta_ATPformation" sboTerm="SBO:0000176" id="ATPformation" name="ATP formation" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_ATPformation" sboTerm="SBO:0000176" id="ATPformation" name="ATP formation" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ATPformation">
@@ -2565,7 +2637,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h2o" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -2611,7 +2683,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_ATPconsumption" sboTerm="SBO:0000176" id="ATPconsumption" name="ATP consumption" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_ATPconsumption" sboTerm="SBO:0000176" id="ATPconsumption" name="ATP consumption" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ATPconsumption">
@@ -2633,7 +2705,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -2659,7 +2731,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_GLCt1r" sboTerm="SBO:0000655" id="GLCt1r" name="Glucose Import (GLUT)" reversible="true" fast="false" compartment="pm">
+      <reaction metaid="meta_GLCt1r" sboTerm="SBO:0000655" id="GLCt1r" name="Glucose Import (GLUT)" reversible="true" compartment="pm">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_GLCt1r">
@@ -2682,7 +2754,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="glc" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -2733,7 +2805,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_HEX1" sboTerm="SBO:0000176" id="HEX1" name="Hexokinase (D-Glucose:ATP) (HEX1)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_HEX1" sboTerm="SBO:0000176" id="HEX1" name="Hexokinase (D-Glucose:ATP) (HEX1)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_HEX1">
@@ -2769,7 +2841,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -2859,7 +2931,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PGI" sboTerm="SBO:0000176" id="PGI" name="Glucose-6-Phosphate Isomerase (PGI)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_PGI" sboTerm="SBO:0000176" id="PGI" name="Glucose-6-Phosphate Isomerase (PGI)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PGI">
@@ -2889,7 +2961,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="f6p" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -2940,7 +3012,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PFK" sboTerm="SBO:0000176" id="PFK" name="Phosphofructokinase (PFK)" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_PFK" sboTerm="SBO:0000176" id="PFK" name="Phosphofructokinase (PFK)" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PFK">
@@ -2975,7 +3047,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3021,7 +3093,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_FBP" sboTerm="SBO:0000176" id="FBP" name="Fructose-Bisphosphatase (FBP)" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_FBP" sboTerm="SBO:0000176" id="FBP" name="Fructose-Bisphosphatase (FBP)" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_FBP">
@@ -3057,7 +3129,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="phos" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3083,7 +3155,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_FBA" sboTerm="SBO:0000176" id="FBA" name="Fructose-Bisphosphate Aldolase (FBA)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_FBA" sboTerm="SBO:0000176" id="FBA" name="Fructose-Bisphosphate Aldolase (FBA)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_FBA">
@@ -3118,7 +3190,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="grap" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3185,7 +3257,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_TPI" sboTerm="SBO:0000176" id="TPI" name="Triose-Phosphate Isomerase (TPI)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_TPI" sboTerm="SBO:0000176" id="TPI" name="Triose-Phosphate Isomerase (TPI)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_TPI">
@@ -3217,7 +3289,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="grap" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3268,7 +3340,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_GAPD" sboTerm="SBO:0000176" id="GAPD" name="Glyceraldehyde-3-Phosphate Dehydrogenase (GAPD)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_GAPD" sboTerm="SBO:0000176" id="GAPD" name="Glyceraldehyde-3-Phosphate Dehydrogenase (GAPD)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_GAPD">
@@ -3306,7 +3378,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3407,7 +3479,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PGK" sboTerm="SBO:0000176" id="PGK" name="Phosphoglycerate Kinase (PGK)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_PGK" sboTerm="SBO:0000176" id="PGK" name="Phosphoglycerate Kinase (PGK)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PGK">
@@ -3443,7 +3515,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="pg3" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3533,7 +3605,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PGM" sboTerm="SBO:0000176" id="PGM" name="Phosphoglycerate Mutase (PGM)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_PGM" sboTerm="SBO:0000176" id="PGM" name="Phosphoglycerate Mutase (PGM)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PGM">
@@ -3568,7 +3640,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="pg2" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3619,7 +3691,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_ENO" sboTerm="SBO:0000176" id="ENO" name="Enolase (ENO)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_ENO" sboTerm="SBO:0000176" id="ENO" name="Enolase (ENO)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ENO">
@@ -3655,7 +3727,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h2o" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3706,7 +3778,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PYK" sboTerm="SBO:0000176" id="PYK" name="Pyruvate Kinase (PYK)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_PYK" sboTerm="SBO:0000176" id="PYK" name="Pyruvate Kinase (PYK)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PYK">
@@ -3743,7 +3815,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="atp" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3833,7 +3905,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PYRt2r" sboTerm="SBO:0000655" id="PYRt2r" name="Transport of Pyruvate (PYRt2r)" reversible="false" fast="false" compartment="mm">
+      <reaction metaid="meta_PYRt2r" sboTerm="SBO:0000655" id="PYRt2r" name="Transport of Pyruvate (PYRt2r)" reversible="false" compartment="mm">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PYRt2r">
@@ -3855,7 +3927,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="pyr_mito" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -3881,7 +3953,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_LDH_L" sboTerm="SBO:0000176" id="LDH_L" name="L-Lactate Dehydrogenase (LDH_L)" reversible="true" fast="false" compartment="cyto">
+      <reaction metaid="meta_LDH_L" sboTerm="SBO:0000176" id="LDH_L" name="L-Lactate Dehydrogenase (LDH_L)" reversible="true" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_LDH_L">
@@ -3920,7 +3992,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="nad" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -4010,7 +4082,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_L_LACt2r" sboTerm="SBO:0000655" id="L_LACt2r" name="L-Lactate Transport (L_LACt2r)" reversible="false" fast="false" compartment="pm">
+      <reaction metaid="meta_L_LACt2r" sboTerm="SBO:0000655" id="L_LACt2r" name="L-Lactate Transport (L_LACt2r)" reversible="false" compartment="pm">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_L_LACt2r">
@@ -4035,7 +4107,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="lac_ext" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -4061,7 +4133,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_PFK26" sboTerm="SBO:0000176" id="PFK26" name="6-Phosphofructo-2-Kinase (PFK26)" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_PFK26" sboTerm="SBO:0000176" id="PFK26" name="6-Phosphofructo-2-Kinase (PFK26)" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_PFK26">
@@ -4100,7 +4172,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="h" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -4146,7 +4218,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_FBP26" sboTerm="SBO:0000176" id="FBP26" name="Fructose-2, 6-Bisphosphate 2-Phosphatase (FBP26)" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_FBP26" sboTerm="SBO:0000176" id="FBP26" name="Fructose-2, 6-Bisphosphate 2-Phosphatase (FBP26)" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_FBP26">
@@ -4183,7 +4255,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <speciesReference species="phos" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
               <times/>
               <ci> cyto </ci>
@@ -4209,7 +4281,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_IRS" sboTerm="SBO:0000655" id="IRS" name="IRS insulin secretion" reversible="false" fast="false" compartment="pm">
+      <reaction metaid="meta_IRS" sboTerm="SBO:0000655" id="IRS" name="IRS insulin secretion" reversible="false" compartment="pm">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_IRS">
@@ -4235,44 +4307,19 @@ FOR A PARTICULAR PURPOSE.</p></body>
             <apply>
               <times/>
               <ci> cyto </ci>
-              <ci> IRS_Vm </ci>
               <apply>
-                <divide/>
-                <apply>
-                  <power/>
-                  <apply>
-                    <divide/>
-                    <ci> atp </ci>
-                    <ci> adp </ci>
-                  </apply>
-                  <ci> IRS_hillatp_ratio </ci>
-                </apply>
-                <apply>
-                  <plus/>
-                  <apply>
-                    <power/>
-                    <apply>
-                      <divide/>
-                      <ci> atp </ci>
-                      <ci> adp </ci>
-                    </apply>
-                    <ci> IRS_hillatp_ratio </ci>
-                  </apply>
-                  <apply>
-                    <power/>
-                    <ci> IRS_Katp_ratio </ci>
-                    <ci> IRS_hillatp_ratio </ci>
-                  </apply>
-                </apply>
+                <plus/>
+                <ci> IRS_ss </ci>
+                <ci> IRS_fp </ci>
               </apply>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_ATP_CHANGE" sboTerm="SBO:0000176" id="ATP_CHANGE" name="ATP change" reversible="false" fast="false" compartment="cyto">
+      <reaction metaid="meta_ATP_ADP_CHANGE" sboTerm="SBO:0000176" id="ATP_ADP_CHANGE" name="ATP+ADP change" reversible="false" compartment="cyto">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_ATP_CHANGE">
+            <rdf:Description rdf:about="#meta_ATP_ADP_CHANGE">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000176"/>
@@ -4292,10 +4339,10 @@ FOR A PARTICULAR PURPOSE.</p></body>
             <apply>
               <times/>
               <ci> cyto </ci>
-              <ci> ATP_CHANGE_Vm </ci>
+              <ci> NUCLEOTIDE_CHANGE_Vm </ci>
               <apply>
                 <minus/>
-                <ci> atp_adp_max </ci>
+                <ci> atp_adp_ss </ci>
                 <ci> atp_adp </ci>
               </apply>
             </apply>
@@ -4303,5 +4350,63 @@ FOR A PARTICULAR PURPOSE.</p></body>
         </kineticLaw>
       </reaction>
     </listOfReactions>
+    <listOfEvents>
+      <event id="event_presimulation" name="Event for presimulation" useValuesFromTriggerTime="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Event for presimulation under given
+glucose concentration for parameter fitting.</p>
+          </body>
+        </notes>
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <and/>
+              <apply>
+                <gt/>
+                <ci> presim_duration </ci>
+                <cn sbml:units="min" type="integer"> 0 </cn>
+              </apply>
+              <apply>
+                <lt/>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                <ci> presim_duration </ci>
+              </apply>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="glc_ext">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> presim_glc_ext </ci>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="event_simulation" name="Event for simulation" useValuesFromTriggerTime="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Event added to model to model simulation under given
+glucose concentration for parameter fitting.</p>
+          </body>
+        </notes>
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <ci> presim_duration </ci>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="glc_ext">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> sim_glc_ext </ci>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
   </model>
 </sbml>
